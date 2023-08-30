@@ -1,0 +1,26 @@
+<form action="/users/signin" method="POST" id=login>
+	<fieldset id="login-field">
+		<header>
+			<div class="flash-message">
+				<% if session[:error]%>
+				<%= session.delete(:error)%>
+				<% end %>
+			</div>
+		</header>
+		<h1>Sign in to the CMS</h1>
+		<div>
+			<input type="username" name="username" id="username" placeholder="Username">
+		</div>
+		<div>
+			<input type="password" name="password" id="password" placeholder="Password">
+		</div>
+		<div class="form_button row">
+			<button type="submit">Login</button>
+			<button type="submit" formaction="/users/register">Register</button>
+		</div>
+
+	</fieldset>
+</form>
+
+
+

@@ -1,0 +1,27 @@
+<% content_for :header_message do %>
+	<div class="flash-message">
+		<h2><%= session[:error] %></h2>
+		<% session[:error] = ""%>
+	</div>
+<% end %>
+
+
+<form action="<%= "/new"%>" method="POST">
+	<h1>Creating New Document</h1>
+	<fieldset>
+		<div class="row">
+			<label id="title" for="title">Title: </label>
+			<input type="text" name="title" id="title">
+		</div>
+		<div class="column">
+			<label class="heading "for="content">Input Text Here</label>
+			<textarea cols = "65" rows="50" name="content" id="content"><%= @content%></textarea>
+		</div>
+
+		<div class="form_button row">
+			<input type="submit" name="reset" value="Create">
+			<input type="reset" name="reset">
+			<a href="/"><button type="button">Close</button></a>
+		</div>
+	</fieldset>
+</form>

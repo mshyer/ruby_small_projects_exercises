@@ -1,0 +1,16 @@
+<% content_for :header_message do %>
+	<div class="flash-message">
+		<h2><%= session[:error] %></h2>
+		<% session[:error] = ""%>
+	</div>
+<% end %>
+
+
+<form action="/upload/image" method="POST">
+
+		<div class="form_button row">
+			<input type="file" id="upload_image" name="upload_image" accept="image/png, image/jpeg">
+			<input type="submit" name="upload" value="upload file">
+			<a href="/"><button type="button">Close</button></a>
+		</div>
+</form>

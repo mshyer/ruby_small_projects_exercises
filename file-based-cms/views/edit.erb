@@ -1,0 +1,20 @@
+<% content_for :header_message do %>
+	<div class="flash-message">
+		<h2><%= session[:error] %></h2>
+		<% session[:error] = ""%>
+	</div>
+<% end %>
+
+
+<form action="<%= "/#{@filename}"%>" method="POST">
+	<label class="heading "for="content">Editing <%= @filename%></label>
+	<fieldset>
+		<textarea cols = "65" rows="50" name="content"><%= @content%>
+		</textarea>
+		<div class="form_button row">
+			<input type="submit" name="reset" value="Save">
+			<input type="reset" name="reset">
+			<a href="/"><button type="button">Close</button></a>
+		</div>
+	</fieldset>
+</form>

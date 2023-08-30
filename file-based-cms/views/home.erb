@@ -1,0 +1,13 @@
+<% content_for :header_message do %>
+	<div class="flash-message">
+		<h2><%= session[:error] %></h2>
+		<% session[:error] = ""%>
+		<% yield_lines(session[:success]) do |line| %>	
+		<h2><%= "#{line}" %></h2>
+		<% end %>
+		<% session[:success] = ""%>
+	</div>
+<% end %>
+
+<h1>Content Management System</h1>
+<p>Click "edit" to change one of the files</p>

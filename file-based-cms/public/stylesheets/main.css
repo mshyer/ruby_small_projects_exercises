@@ -1,0 +1,203 @@
+@import url("whitespace-reset.css");
+* {
+	box-sizing: border-box;
+}
+html {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 20px;
+}
+body {
+	background: #cccccc;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: 70%;
+	background: #cecece;
+	float: left;
+	padding: 10px;
+}
+
+form.button {
+	display: inline-block;
+	width: 150px;
+
+	height: auto;
+	text-align: center;
+	float: none;
+	padding: 0;
+
+}
+form.button button {
+	display: inline-block;
+	width: auto;
+	background: 0%;
+	border: none;
+}
+form.button button:hover {
+	background-color: rgba(255, 255, 128, .5);;
+
+}
+
+div.flash-message {
+	display: block;
+	background: yellow;
+}
+
+/* Sidebar*/
+
+div#sidebar {
+	/*display: inline-block;*/
+	float: left;
+	width: 30%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: #cecece;
+
+
+}
+
+
+#documents-list {
+}
+#documents-list h1 {
+	font-size: 1.5rem;
+}
+
+#documents-list li {
+	display: block;
+	line-height: 50px;
+	background: darkgray;
+
+
+	/*background: yellow;*/
+}
+#documents-list li:hover {
+	background: steelblue;
+}
+
+#documents-list a {
+	display: inline-block;
+	width: 75%;
+	color: blue;
+	text-decoration: underline;
+	font-size: 1rem;
+}
+#documents-list a.edit {
+	display: inline-block;
+	width: 0px;
+	/*content: "";*/
+}
+form.delete {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	float: none;
+	padding: 0;
+}
+#documents-list button {
+	display: inline-block;
+}
+#documents-list a.edit {
+	margin-right: 35px;
+}
+
+a.edit::before {
+	display: inline-block;
+	content: "";
+	width: 1rem;
+	height: 1rem;
+	background: transparent url("../images/icon_edit.png") 0 0 no-repeat;
+	background-size: cover;
+}
+#documents-list button.delete {
+	width: 1rem;
+	height: 1rem;
+	background: transparent url("../images/icon_delete.png") 0 0 no-repeat;
+	background-size: cover;
+	border: none;
+	padding: 0;
+}
+#documents-list button.delete:hover {
+	background-color: rgba(255, 255, 128, .5);;
+
+}
+
+.edit:hover:before {
+	background-color: rgba(255, 255, 128, .5);;
+}
+
+div.row {
+	display: flex;
+	flex-direction: row;
+	
+}
+
+div.separated {
+	justify-content: space-between;
+}
+
+/*Form*/
+
+
+
+label.heading {
+	font-weight: bold;
+	font-size: 1em;
+}
+textarea {
+	border: solid 3px darkgray;
+}
+
+div.column * {
+	display: block;
+	margin: 10 0px;
+}
+
+.form_button button,
+.form_button input {
+	line-height: 25px;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+form#login {
+	width: 100%;
+	align-items: center;
+}
+
+#user_info {
+	font-style: italic;
+}
+
+fieldset#login-field {
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	flex-basis: 50%;
+	align-items: center;
+	width: 500px;
+	justify-content: center;
+	border-radius: 15px;
+	box-shadow: 2px 2px 4px rgb(0 0 0 /10%), 0 8px 16px rgb(0 0 0 / 10%);
+	background: #ffffff;
+}
+
+fieldset#login-field * {
+	flex-basis: 10%;
+}
+
+fieldset#login-field input {
+	width: 250px;
+	line-height: 25px;
+	padding: 5px;
+	border: 1px solid darkgray;
+	border-radius: 3px;
+}
+fieldset#login-field button {
+	margin-top: 10px;
+	display: inline-block;
+}
+

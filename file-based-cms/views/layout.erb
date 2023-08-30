@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mr. Content Manager</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+	<header>
+		<%= yield_content :header_message %>
+	</header>
+	<div id="sidebar">
+
+	<h1>Documents</h1>
+
+	<div class="separated row">
+		<a href="/new">New</a>
+	</div>
+	<ul id="documents-list">
+	<% @documents.each do |document| %>
+		<li>
+			<a href="<%= "/#{document}" %>"><%= document %></a>
+			<a class="edit" href="<%= "/#{document}" %>/edit"></a>
+			<form class="delete" method="post" action="/<%="#{document}"%>/delete">
+				<button type="submit" class="delete"></button>
+			</form>
+		</li>
+	<% end %>
+	<% if admin? %>
+			<li>
+				<a href="<%= "/users/users.yaml" %>">users</a>
+				<a class="edit" href="<%= "/users" %>/edit"></a>
+			</li>
+	<% end %>
+	</ul>
+		<div class=" row">
+			<% if session[:user] %>
+			<p id="user_info">Logged in as <%= session[:user]%></p>
+			<form class="button" action="/users/signout" method="post">
+				<button type="submit">Log Out</button>
+			</form>
+			<% else %>
+			<a href="/users/signin">Log In/Register</a>
+			<% end %>
+		</div>
+	</div>
+	<div id=main-content>
+		<%= yield %>
+	</div>
+</body>
+</html>

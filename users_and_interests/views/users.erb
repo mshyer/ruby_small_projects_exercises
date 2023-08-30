@@ -1,0 +1,5 @@
+<% @user_data.keys.each do |key| %>
+	<h1><a href="/users/<%= key%>"><%= key.capitalize %></a></h1>
+<% end %>
+
+<p><%= @user_data[:jamy]%></p>

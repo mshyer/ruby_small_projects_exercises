@@ -1,0 +1,1 @@
+Some lesson materials are in the "misc_130_project_separate_git" directory

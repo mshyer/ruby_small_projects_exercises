@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+
+ruby '3.1.2'
+gem 'sinatra'
+gem 'webrick'
+gem 'rack'
+gem 'rake', '~>10.4.0'
